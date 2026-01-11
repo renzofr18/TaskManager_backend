@@ -46,7 +46,7 @@
     <Compile Include="Common\BaseEntity.cs" />
     <Compile Include="Entities\TaskItem.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Enums\TaskEstatus.cs" />
+    <Compile Include="Enums\TaskStatus.cs" />
     <Compile Include="Enums\TaskPriority.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
