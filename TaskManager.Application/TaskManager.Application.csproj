@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,6 +52,7 @@
     <Compile Include="Common\Result.cs" />
     <Compile Include="DTOs\TaskDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseCases\GetTaskById\GetTaskByIdUseCase.cs" />
     <Compile Include="UseCases\GetTasks\GetTasksUseCase.cs" />
   </ItemGroup>
   <ItemGroup>

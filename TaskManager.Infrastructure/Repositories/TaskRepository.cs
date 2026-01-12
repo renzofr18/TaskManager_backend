@@ -27,7 +27,7 @@ namespace TaskManager.Infrastructure.Repositories
             TaskPriority? priority,
             Guid userId)
         {
-            const string sp = "dbo.SP_Tasks_ListByUser";
+            const string sp = "dbo.Tasks_ListByUser";
 
             using var connection = _connectionFactory.CreateConnection();
 
@@ -42,7 +42,26 @@ namespace TaskManager.Infrastructure.Repositories
 
             return rows.Select(r => TaskMapping.ToDomain(r));
         }
-            private sealed class TaskRow
+
+        public async Task<TaskItem?> GetTaskByIdAsync(Guid taskId, Guid userId) {
+
+            const string sp = "dbo.Task_GetById";
+
+            using var connection = _connectionFactory.CreateConnection();
+
+            var parameters = new
+            {
+                UserIdt = userId,
+                TaskId = taskId
+            };
+
+            var row = await connection.QuerySingleOrDefaultAsync<TaskRow>(sp, parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            return row is null ? null : TaskMapping.ToDomain(row);
+
+
+        }
+        private sealed class TaskRow
             {
                 public Guid Id { get; set; }
                 public string Title { get; set; } = null;

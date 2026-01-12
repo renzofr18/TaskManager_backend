@@ -14,5 +14,8 @@ namespace TaskManager.Application.Abstractions.Repositories
             TaskPriority? priority,
             Guid userId
         );
+
+        Task<TaskItem?> GetTaskByIdAsync(Guid taskId, Guid userId);
+
     }
 }
