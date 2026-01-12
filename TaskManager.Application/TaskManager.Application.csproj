@@ -43,12 +43,12 @@
     <Reference Include="Microsoft.Analytics.Types" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\Repositories\ITaskRepository.cs.cs" />
-    <Compile Include="Abstractions\Repositories\IUserRepository.cs.cs" />
-    <Compile Include="Common\Result.cs.cs" />
-    <Compile Include="DTOs\TaskDto.cs.cs" />
+    <Compile Include="Abstractions\Repositories\ITaskRepository.cs" />
+    <Compile Include="Abstractions\Repositories\IUserRepository.cs" />
+    <Compile Include="Common\Result.cs" />
+    <Compile Include="DTOs\TaskDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UseCases\GetTasks\GetTasksUseCase.cs.cs" />
+    <Compile Include="UseCases\GetTasks\GetTasksUseCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Domain\TaskManager.Domain.csproj">

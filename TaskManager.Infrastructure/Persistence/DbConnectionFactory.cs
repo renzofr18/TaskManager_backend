@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace TaskManager.Infrastructure.Persistence
 {
-    internal class DbConnectionFactory
+    public class DbConnectionFactory
     {
+        private readonly string _connectionSting;
+
+        public DbConnectionFactory(string connectionSting)
+        {
+            _connectionSting = connectionSting;
+        }
+
+        public IDbConnection CreateConnection() => new SqlConnection(_connectionSting);
     }
 }
